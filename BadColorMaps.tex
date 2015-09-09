@@ -1,0 +1,282 @@
+\documentclass[letterpaper,twocolumn,fleqn]{article} 
+
+\pagestyle{empty}                % no page numbers is default
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{framed}
+\usepackage{ifthen}
+\usepackage{cite}
+\usepackage{tabulary}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{verbatim}
+
+\usepackage{ist} % Style for IST in package instead of document class.
+
+\usepackage{color}
+\definecolor{yellow}{rgb}{1,1,0}
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{ltcyan}{rgb}{.75,1,1}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{gray}{rgb}{.6,.6,.6}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+
+% Cite commands I use to abstract away the different ways to reference an
+% entry in the bibliography (superscripts, numbers, dates, or author
+% abbreviations).  \scite is a short cite that is used immediately after
+% when the authors are mentioned.  \lcite is a full citation that is used
+% anywhere.  Both should be used right next to the text being cited without
+% any spacing. \hcite is a citation that I am hiding, perhaps because I am
+% nearing the maximum number of citations for a journal.
+\newcommand*{\lcite}[1]{~\cite{#1}}
+\newcommand*{\scite}[1]{~\cite{#1}}
+\newcommand*{\hcite}[1]{}
+
+\newcommand{\etal}{et al.\xspace}
+
+\newcommand*{\keyterm}[1]{\emph{#1}}
+
+\newcommand{\fix}[1]{{\color{red}\textsc{[#1]}}}
+%\newcommand{\fix}[1]{}
+
+% Avoid putting figures on their own page.
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+
+% Make sure this is big enough so that only big figures end up on their own
+% page but small enough so that if a figure does have to be on its own
+% page, it won't push everything to the bottom because it's not big enough
+% to have its own page.
+\renewcommand{\floatpagefraction}{.75}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Why We Use Bad Color Maps and What You Can Do About It}
+
+\author{Kenneth Moreland; Sandia National Laboratories; Albuquerque, New
+  Mexico, USA}
+
+\date{} % date has an empty field.
+
+% correct for bad hyphenation here
+\hyphenation{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} 
+
+\maketitle 
+
+\thispagestyle{empty} % prevents the first page to be numbered
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+Please include a brief abstract of this paper. Avoid using figures or
+equations in the abstract.
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overall Document Guidelines: Head
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overall Document Guidelines: Head}
+\label{sec:intro}
+
+Clear document of any fonts other than Times, Arial, and Symbol. The
+paper should be formatted using the tags provided in the template,
+i.e., title, author, section, subsection, subsubsection, eq./fig.,
+references, etc.  in a 2 column format on US letter size paper ($8.5
+\times 11$ inches, or $21.6 \times 27.9$ cm).
+
+The left and right margins are set automatically to .75 inch (1.90 cm),
+and the top and bottom margins to 1.0 inch (2.54 cm). The document is in
+a 2-column format with column widths set at 3.38 inch (8.57 cm) and the
+gutter -the space between columns- at .25 inch (0.635 cm).
+
+Papers should be a maximum of 4-6 pages; longer papers will be
+returned for revision. Please do not place folios or page numbers in
+your paper. That information is inserted when we assemble the book.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphics and Equations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graphics and Equations}
+Graphics and equations should fit within one column (3.38 inches
+wide), but full width (7 inch) figures are also acceptable. Equations,
+figures and figure captions each have their own style tags. Equations
+are numbered using parentheses flushed right as shown below.
+
+\begin{equation}
+\label{eq:ist}
+\textrm{IS\&T} + \textrm{members} \times \textrm{Confs.} = \textrm{Success}
+\end{equation}
+
+
+\subsection{Helpful Hints and Style Tags: Subhead}
+For a complete listing of the style tags for use in this template
+refer to Table \ref{tab:fonts}. These are the style tags for
+conference proceedings; if you use the wrong template/style tags your
+paper will be sent back to you to be reformatted.  All of these forms
+and templates related to the publication of conference papers are
+available at
+
+www.imaging.org/conferences/guidelines.cfm. 
+
+Select the specific conference and download the Authors Kit. The
+template may vary from one conference to another.
+
+The template is set up for MS Word and LaTeX. Please check the paper
+carefully to confirm that the styles have been applied correctly, then
+print it out and double check to ensure that the paper appears as
+intended.
+
+\begin{table}[!h]
+\caption{Style Tag Table: Table head}
+\label{tab:fonts}
+\begin{center}       
+\begin{tabular}{|p{0.45\columnwidth}|p{0.45\columnwidth}|} 
+\hline
+1. Title& title environment \\ \hline
+2. Byline: & \\
+Author/Affiliation & author environment \\ \hline
+3. Head & section environment \\ \hline
+4. Subhead & subsection environment \\ \hline
+5. Tertiary head & subsubsection environment \\ \hline
+6. Abstract & abstract environment \\ \hline 
+& \\ \hline
+7. Body & regular text\\ \hline
+8. Equation & equation environment\\ \hline
+9.1 Figure & align left \\ \hline
+9.2 Figure caption & caption environment \\ \hline
+10.1 Table head & caption environment \\ \hline
+10.2 Table text & tabular environment \\ \hline
+11. References & bibliography + 
+command \emph{small} to have a 1pt smaller font\\ \hline
+12. Author Bio text & biography environment\\ \hline
+13.1 List, bullet & itemize environment\\ \hline
+13.2 List, numbered & enumerate environment \\ \hline
+\end{tabular}
+\end{center}
+\end{table} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Submitting Your Paper
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Submitting Your Paper}
+The submission of your paper has to be performed through the IS\&T
+submission website. Authors receive a login for this site by e-mail.
+Papers can be submitted in Postscript, Word, or WordPerfect format,
+and will be converted to PDF by the submission server. Please
+carefully review the generated PDF and verify that all the text,
+equations, figures and tables are displayed correctly before approving
+its submission.
+
+\subsection{Margins in LaTeX}
+Because of the differences between dvips conversion utilities, the
+margins of your generated PDF document might vary. Please print
+your document, and verify its margins. If they are incorrect, please
+adapt the sizes of the margins in the file \emph{ist.sty}. Typically the
+top margin should be decreased.
+
+\begin{table}[!ht]
+\caption{Document Specs: Table head}
+\label{tab:specs}
+\begin{center}       
+\begin{tabular}{p{0.35\columnwidth}p{0.55\columnwidth}} 
+Paper Size & US Letter \\
+Left/right margin & .75 inch (1.90 cm) \\
+Top/bottom margin & 1 inch (2.54 cm) \\
+Columns & 2 at 3.38 inch (8.57 cm) wide. \\
+ & Spacing between columns: 0.25 inch (0.635 cm)
+\end{tabular}
+\end{center}
+\end{table} 
+
+\begin{figure}[!hb]
+%  \includegraphics[width=0.3\columnwidth]{logo.png}
+  \caption{IS\&T logo.}
+  \label{Figure:logo}
+\end{figure}
+
+Please contact IS\&T with any questions or requests for assistance in
+helping prepare the paper. We look forward to having your paper
+presented at the conference and published in the conference
+proceedings.
+
+\begin{figure}[!hb]
+%  \includegraphics[width=0.3\columnwidth]{logo.png}
+  \caption{IS\&T logo.}
+  \label{Figure:logo}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference Preparation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Reference Preparation}
+Use the standard LaTeX \emph{cite} command for references in the
+text. You can then use the standard bibliography command to generate
+the list of references. Add the command \emph{small} before the
+bibliography to give it the right font size.  Reference \cite{bib1}
+style should be used for books, Reference \cite{bib2} style should be
+used for Journals, and Reference \cite{bib3} style should be used for
+Proceedings.
+
+%\section{Acknowledgments} 
+%add the acknowledgement section here
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use \vfill\pagebreak.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\small
+\begin{thebibliography}{9}
+\bibitem{bib1}John Doe, Recent Progress in Digital Halftoning II,
+  IS\&T, Springfield, VA, 1999, pg. 173.
+\bibitem{bib2}John Doe, Digital Imaging, J. Imaging. Sci. and
+  Technol., 42, 112 (1998).
+\bibitem{bib3}John Doe, An Inexpensive Micro-Goniophotometry You Can
+  Build, Proc. PICS, pg. 179. (1998).
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Biography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{biography}
+Please submit a brief biographical sketch of no more than 75 words. 
+Include relevant professional and educational information as shown 
+in the example below.
+
+Jane Doe received her BS in physics from the University of Nevada (1977) 
+and her PhD in applied physics from Columbia University (1983). Since 
+then she has worked in the Research and Technology Division at Xerox 
+in Webster, NY. Her work has focused on the development of toner adhesion 
+and transport issues. She is on the Board of  IS\&T and a member of APS 
+and SPIE.
+\end{biography}
+
+\end{document} 
