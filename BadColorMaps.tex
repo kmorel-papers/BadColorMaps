@@ -96,6 +96,44 @@ wedded to it will migrate away.
 \end{abstract}
 
 
+\section{Introduction}
+
+\noindent
+A pervasive technique in scientific visualization called pseudocoloring is
+to apply colors to an object that vary based on some numerical variable.
+Pseudocoloring requires defining a function or map from numerical values to
+colors. A color map is typically defined by selecting a continuum of colors
+that map linearly to a range of numeric values.
+Figure~\ref{fig:ColorMapExample} shows a simple example of a color map
+where numeric values between -1 and 0 map to blue colors of varying
+brightness and numeric values between 0 and 1 map to red colors.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=.9\linewidth]{images/ColorMapExample}
+  \caption{A simple example of a color map.}
+  \label{fig:ColorMapExample}
+\end{figure}
+
+The efficacy of a pseudocolor visualization is contingent on the ability of
+a human observer to translate the colors back into the numeric values they
+represent. The choice of colors used in a pseudocolor map can have a major
+impact on this inverse translation. Consequently, much research has focused
+on the perception of color and its impact of the visual display of
+data\fix{cite stone, brewer, ware, reigens, rogowitz}.
+
+
+\section{Why We Use Bad Colors}
+
+
+\section{How We Can Promote Good Color Use}
+
+
+\section{Practical Considerations}
+
+Managing the unknown.
+
+
 \section{Acknowledgments} 
 
 % To start a new column (but not a new page) and help balance the last-page

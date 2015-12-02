@@ -4,4 +4,10 @@ project(BadColorMaps NONE)
 
 include(UseLATEX.cmake)
 
-add_latex_document(BadColorMaps.tex)
+set(images
+  images/ColorMapExample.png
+  )
+
+add_latex_document(BadColorMaps.tex
+  IMAGES ${images}
+  )
