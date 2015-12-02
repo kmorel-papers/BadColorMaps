@@ -120,7 +120,27 @@ a human observer to translate the colors back into the numeric values they
 represent. The choice of colors used in a pseudocolor map can have a major
 impact on this inverse translation. Consequently, much research has focused
 on the perception of color and its impact of the visual display of
-data\fix{cite stone, brewer, ware, reigens, rogowitz}.
+data\fix{cite stone, brewer, ware, reigens, rogowitz}. As one might expect,
+the color choice can have a dramatic impact on a viewer's performance in
+interpreting colors as numbers, and many effective color sets have been
+designed for this purpose.
+
+With this rich understanding of color perception, one might think that
+modern visualizations make effective use of color. Unfortunately, many
+visualizations today use color sets that are known to be extremely
+problematic. In particular the rainbow color map, so called for its use of
+the spectrum of colors in the rainbow, is pervasively used in visualization
+despite the copious evidence that it performs poorly\fix{cite Borland,
+  Reigens, Franchesca? Others?}.
+
+This paper is a retrospective on why these bad colors are so commonly
+chosen for visualization and is a position statement on what we as
+practitioners can do to best promote good color use.
+
+\fix{I am considering having a short section on the evils of the rainbow
+  color map if there is room. If I do, I might remove a few lines above. If
+  I do not, I might add a statement or two above that we are not addressing
+  this because it is so commonly presented.}
 
 
 \section{Why We Use Bad Colors}
