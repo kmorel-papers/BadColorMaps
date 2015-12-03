@@ -145,13 +145,81 @@ practitioners can do to best promote good color use.
 
 \section{Why We Use Bad Colors}
 
+\noindent
+Reserach shows that subjects tend to overestimate their ability to
+interpret rainbow colors\fix{cite}. That is, users think they are
+interpreting rainbow colors better than alternatives even though they are
+in fact doing worse. This is certainly a contributing factor to the
+proliferation of the rainbow color map, but not the entire reason. Why else
+would the rainbow color map be so profuse in publications by the
+visualization community itself, a community that should know
+better\fix{cite Borland}?
+
+One explanation is the sheer simplicity of creating the rainbow color map.
+Nearly all color selections in computer graphics interfaces are done with
+RGB (red-green-blue) channels. RGB is a natural choice in computer graphics
+because the triplet values match the intensity of red, green, and blue
+light mixed in most display peripherals. An unintended consiquence of the
+RGB color space is that one of the easiest color continua to make is an
+interpolation between different combinations of fully active and fully
+inactive channels, which are in fact the rainbow colors. Many computer
+graphics interfaces also allow colors chosen with HSV
+(hue-saturation-value) channels. The HSV color space makes makes rainbow
+colors even easier: hold saturation and value at maximum while varying hue.
+
+With the simplicity of creating a rainbow spectrum of colors combined with
+the inclination to accept the colors as a good representation, it is no
+wonder that the rainbow colors are often the first and likely the default
+color mapping introduces as a visualization package gets built. These
+initial poor color choices quickly become ingrained in the software as
+regression testing and backward compatibility must be maintained. Further
+software layers continue to accept this default and software applications
+are likely to expose the rainbow color map as its default choice for end
+users. Few users will have either the knowledge or the inclination to
+change the default colors used, and thus the rainbow color map becomes
+featured throughout visualizations.
+
+However, simplicity is not the only reason rainbow colors are so widely
+used. If that were the case, simply making a better alternative would
+eradicate the use of bad colors. But this, at least anecdotally, is shown
+not to be the case. Consider, for example, bug number 7024 for the ParaView
+scientific visualization
+application.\footnote{\url{http://www.paraview.org/Bug/view.php?id=7024}} A
+user raised this bug soon after the default color map in ParaView was
+changed from the rainbow color map to the map shown in
+Figure~\ref{fig:ColorMapExample}, which is designed to be reasonably
+similar to the rainbow color map it supplants but with better perceptual
+characteristics\fix{cite my paper, perceptual studies on it}. Despite this
+movement to make the better color map easier, this bug report is an
+artifact of the user's difficulty as he went through the extra motions to
+go back to the rainbow color map.
+
+The overestimation of the efficacy of the rainbow color map might be a
+motivator to spend effort to go back to it, but it is unlikely to be a very
+strong motivator. In fact, other ancdotal incidents suggest that even users
+that are aware of the rainbow's flaws still have an affinity to use it.
+\fix{Throw Alan under the bus.}
+
+\fix{Still not sufficent. Counterexamples of bug reports, intentionally
+  chosen colors (apple).}
+
+\fix{Of course, interpretation. Ultimately, people like the aesthetics.
+  Oooh, shiney. And sciency.}
+
+\fix{Also, communities sometimes get ``stuck'' in color choices. Need to
+  compare current visualization with those generated 10 years ago.}
+
+\fix{Should there be subsections that act like an enumeration for tl;dr?}
+
 
 \section{How We Can Promote Good Color Use}
 
 
 \section{Practical Considerations}
 
-Managing the unknown.
+\fix{Managing the unknown.}
+
+\fix{Contending with asthetics.}
 
 
 \section{Acknowledgments} 
