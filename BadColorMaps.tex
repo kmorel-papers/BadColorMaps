@@ -155,6 +155,9 @@ would the rainbow color map be so profuse in publications by the
 visualization community itself, a community that should know
 better\fix{cite Borland}?
 
+\subsection{Simplicity}
+
+\noindent
 One explanation is the sheer simplicity of creating the rainbow color map.
 Nearly all color selections in computer graphics interfaces are done with
 RGB (red-green-blue) channels. RGB is a natural choice in computer graphics
@@ -179,6 +182,9 @@ users. Few users will have either the knowledge or the inclination to
 change the default colors used, and thus the rainbow color map becomes
 featured throughout visualizations.
 
+\subsection{Aesthetics}
+
+\noindent
 However, simplicity is not the only reason rainbow colors are so widely
 used. If that were the case, simply making a better alternative would
 eradicate the use of bad colors. But this, at least anecdotally, is shown
@@ -198,18 +204,50 @@ The overestimation of the efficacy of the rainbow color map might be a
 motivator to spend effort to go back to it, but it is unlikely to be a very
 strong motivator. In fact, other ancdotal incidents suggest that even users
 that are aware of the rainbow's flaws still have an affinity to use it.
-\fix{Throw Alan under the bus.}
+Consider the example visualization in Figure~\ref{fig:ExpertRainbowVis}
+created by one of my colleagues at Sandia National Laboratories. He and I
+have had many spirited conversations about color use and still he finds
+occasion to use the rainbow's colors. His argument is that this particular
+visualization is not used for scientific study but rather for communicating
+and engaging with non-experts, and these eye-grabbing colors are the best
+for this purpose.
 
-\fix{Still not sufficent. Counterexamples of bug reports, intentionally
-  chosen colors (apple).}
+\begin{figure}[htb]
+  \centering
+  \fix{Example frame of bullet hitting apple.}
+  \caption{Despite having years of experience and being well aware of the
+    problems with rainbow color maps, the designer of this visualization
+    chose these colors over others offered with better perceptual
+    properties.}
+  \label{fig:ExpertRainbowVis}
+\end{figure}
 
-\fix{Of course, interpretation. Ultimately, people like the aesthetics.
-  Oooh, shiney. And sciency.}
+Ultimately it is the eye-grabbing nature of the rainbow colors that keeps
+us coming back to them over and over again. Regardless of how we can
+interpret these colors, the bright and varying pure colors are certainly
+captivating (if not distracting), and it takes a good deal of time and
+expertise to beat these colors on aesthetics alone.
 
-\fix{Also, communities sometimes get ``stuck'' in color choices. Need to
-  compare current visualization with those generated 10 years ago.}
+\subsection{Inertia}
 
-\fix{Should there be subsections that act like an enumeration for tl;dr?}
+\noindent
+Finally, a major contributor to the persistence of the rainbow color map is
+that it has become entrenched in scientific visualization. Take for example
+VTK\fix{cite}, the popular visualization library. Despite the fact that
+better color maps have been used with and contributed to VTK, the default
+coloring still reverts to the rainbow map. The problem is that although it
+is easy to add a new feature to VTK is easy, changing a core feature like
+the default colors is difficult. VTK contains hundreds of regression tests
+that could break if the default colors are changed, and updating them can
+be very time consuming. Furthermore, such a change will necessarily break
+backwards compatibility and so has to be approved by the larger VTK
+community, another time consuming process. These software development
+minutiae create inertia in changing color map usage.
+
+The same type of inertia forms within scientific communities using
+visualization tools. Often scientists compare current results with previous
+results. If previous scientific results are only available with the rainbow
+color map, the community is stuck with these color choices.
 
 
 \section{How We Can Promote Good Color Use}
@@ -225,6 +263,8 @@ that are aware of the rainbow's flaws still have an affinity to use it.
 
 
 \section{Practical Considerations}
+
+\fix{No perfect color map.}
 
 \fix{Managing the unknown.}
 
