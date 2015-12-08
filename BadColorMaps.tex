@@ -322,11 +322,53 @@ use the rainbow color map as the default.
 
 \subsection{Simplification}
 
-\fix{Make the right thing easier. Color brewer. Accessible implementations
-  of research. Tools.}
+\noindent
+As stated previously, one of the main factors making the rainbow colors a
+primary choice in visualization is the sheer simplicity of creating them.
+However, the simpler it is to create good colors, the more likely a user is
+going to do so. Ideally, good coloring become easier to apply than poor
+coloring.
 
-\fix{Note that infovis tends to have better color use and infrequently uses
-  rainbow. Likely in part because of color brewer.}
+The first step is for the experts designing color for visualization to make
+the colors they create accessible. Creating examples and publishing
+literature is important, but to make a real impact on the field of
+visualization, the coloring must be delivered in a format that can be used
+by non-experts.
+
+An excellent example of making color research accessible is the work by
+Brewer \etal\fix{cite ColorBrewer}. This work has produced a plethora of
+color schemes that can be used for mapping values to colors. But the real
+value for visualization practitioners is that Brewer provides a web
+page\footnote{\url{http://colorbrewer2.org}} \fix{shown in figure X?} with
+a simple and intuitive interface for choosing a collection of colors. Once
+selected, the site provides color values that are easily imported into any
+program, API, or web interface. The work of creating and maintaining this
+site is well above and beyond any of the publications, but the effect this
+web site has on the field of visualization is well beyond anything the
+publications can offer. This repository of colors is so effective that
+although the design was originally targeted specifically for cartography,
+the Color Brewer website is a standard reference for all types of
+visualization.
+
+We cannot all be as cool as Color Brewer, but even simple ready-to-play
+resources can make a difference. Consider my earlier paper on diverging
+color maps\fix{cite Moreland2009}. When I published this paper I posted a
+simple companion web site providing example color values that are easily
+imported in software as well as the software and tools used in constructing
+the paper.\footnote{\url{http://www.kennethmoreland.com/color-maps/}}
+\fix{Also have a screenshot?} I continue to maintain the site and have
+additionally added contributions from several readers. Although this page
+requires some effort to build and maintain, it has immeasurably helped the
+research take hold in practice, which both helps the visualization
+community as a whole and helps increase visibility of my personal
+visualization work.
+
+Ultimately, almost all visualizations are made through some form of
+software tools, and we can make the biggest positive aspect by designing
+these tools to make good use of color. Tools like ParaView\fix{cite} and
+MATPLOT\fix{cite} have recently changed their default coloring to move away
+from rainbow colors. These changes engender improvements in a large
+quantity of visualizations produced.
 
 \subsection{Time}
 
