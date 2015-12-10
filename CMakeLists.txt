@@ -6,6 +6,8 @@ include(UseLATEX.cmake)
 
 set(images
   images/ColorMapExample.png
+  images/pres-log-legend-0042.png
+  images/CheckerShadowIllusion.png
   )
 
 add_latex_document(BadColorMaps.tex
