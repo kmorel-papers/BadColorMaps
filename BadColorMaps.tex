@@ -336,7 +336,7 @@ visualization, the coloring must be delivered in a format that can be used
 by non-experts.
 
 An excellent example of making color research accessible is the work by
-Brewer \etal\fix{cite ColorBrewer}. This work has produced a plethora of
+Brewer, \etal\fix{cite ColorBrewer}. This work has produced a plethora of
 color schemes that can be used for mapping values to colors. But the real
 value for visualization practitioners is that Brewer provides a web
 page\footnote{\url{http://colorbrewer2.org}} \fix{shown in figure X?} with
@@ -380,16 +380,147 @@ Progress is being made, and visualization experts must continue their
 education, admonishment, and simplification.
 
 
-\section{Practical Considerations}
+\section{Simple Practical Advice}
 
-\fix{Maybe make this color maps to use instead.}
+The remainder of this paper is spent administering simple, practical advice
+for novice users. Engineering good color maps is complex as it requires
+considerable knowledge of color theory and perception, involves the
+resolution of conflicting goals, and is aided by some artistic ability.
+Choosing good colors is time consuming even for experts.
 
-\fix{No perfect color map.}
+This advice attempts to circumvent all these complexities by instead
+leveraging ready-made colors. As there is no perfect color map for all
+instances we consider multiple options, but attempt to keep the number of
+options small for simplicity.
 
-\fix{Managing the unknown.}
+\subsection{Color Brewer}
 
-\fix{Contending with asthetics.}
+\noindent
+The first resource for any color choice should be the aforementioned
+excellent Color Brewer web page.\fix{prob move footnote here} The
+collection of color maps provided is very well organized, making it easy to
+find a set of colors appropriate for whatever visualization it is applied
+to. The extensive collection of color maps makes it likely that one is
+available for whatever visualization needs you have. And since each set of
+colors is designed well by experts, they are efficacious in addition to be
+attractive.
 
+\subsection{3D Visualization}
+
+\noindent
+A common operation in scientific visualization is the application of
+pseudocoloring on a 3D surface or volume. When using pseudocoloring in a 3D
+environment, extra care should be taken in the color choices as the shading
+of colors provides important spatial cues. The simultaneous coloring and
+shading should not interfere with each other.
+
+Some practitioners propose using isoluminant color maps so that the
+psuedocoloring does not alter the shading in any way. However, isoluminant
+colors tend to make poor linear maps because of their low
+contrast\fix{cite}. Also the visual system is quite adept at distinguishing
+shading caused by textures and shading caused by lighting conditions as
+demonstrated in Figure~\ref{fig:CheckerShadowIllusion}.
+
+\begin{figure}[htb]
+  \centering
+  \fix{The checker shadow illusion, from
+    \url{https://en.wikipedia.org/wiki/Checker_shadow_illusion}}
+  \caption{The checker shadow illusion first published by Edward H.
+    Adelson. Although the squares marked A and B measure the exact same
+    brightness, the visual system has no trouble distinguishing the shading
+    of the checkerboard texture on the floor from the shadow cast by the
+    cylinder.}
+  \label{fig:CheckerShadowIllusion}
+\end{figure}
+
+That said, 3D shading requires surfaces that reflect a good amount of light
+to be effective. Dark surfaces appear amorphous, so a color map used in 3D
+should retain some brightness throughout. Color maps that drop to black are
+unusable on 3D shapes.
+
+Common advice for mapping a scalar field with no special middle value is to
+use a color map with monotonically increasing brightness because brightness
+is a good indication of order and provides high contrast. The maximum range
+of brightness that can be achived is to go from black to white (with any
+number of hues used in between). However, because the darkest colors
+interfere with 3D shading, the darker colors cannot be used, reducing the
+perceptual resolution of the color map.
+
+An alternative to a map with monotonic brightness is a diverging color map,
+which is a double-ended map containing colors with different hues at each
+end and meeting with a bright neutral color in the middle. Diverging color
+maps are traditionally designed for displaying scalars that have a value of
+special significance in the middle (such as sea level for elevation or the
+freezing point for temperature).
+
+Early advice condemned the use of diverging color maps for showing a
+uniform range of values because they do not have monotomic brightness.
+However, recent works suggest using diverging color maps with hues having
+low/high cues, such as cool and warm colors, that naturally convey the
+relative values\fix{cite Moreland2009}. Recent preceptual studies have
+shown the diverging color maps to be
+efficacious\fix{citeBorkin2011,others}.
+
+The Color Brewer web site\fix{perhaps the URLs should be references so that
+  I can refer to them in multiple places} contains several diverging color
+maps that can work well in 3D. There are also resources for diverging color
+maps that smoothly interpolate throughout\fix{ref my website?}.
+
+\subsection{Flat Scalar Fields}
+
+\noindent
+Some use cases of scientific visualization involve the pseudocoloring of
+fields on flat 2D surfaces rather than in 3D. Common use cases include
+geographic fields, dense arrays or matrices, and two dimensional functions.
+In this case, the pseudocoloring can be applied to the flat surface of the
+image, a technique sometimes known as a heat map. Because the 2D surface
+requires no shading, it does not have the color limitations of 3D data.
+
+Thus, to maximize the perceptual resolution of a flat field, it is
+sometimes desirable to use a color map that goes from no brightness (black)
+to maximum brightness (white). Although a grayscale ramp satisfies this
+criteria, simultaneous contrast tends to make it perceptually
+inaccurate\fix{Cite Ware}. Inserting changing hues helps remove the
+problems with simultaneous contrast.
+
+\begin{figure}[htb]
+  \centering
+  \fix{Black body radiation color bar}
+  \caption{The black body radiation color map.}
+  \label{fig:BlackBodyRadiationColorBar}
+\end{figure}
+
+One effective color map going from black to white is known as black
+body radiation, shown in Figure~\ref{fig:BlackBodyRadiationColorBar}. This
+color map is inspired by the color of light emitted by a body held at
+different temperatures. The changes in red, orange, and yellow hues help
+distinguish colors with different backgrounds and the progression of hues
+helps reinforce the interpretation of the colors.
+
+\begin{figure}[htb]
+  \centering
+  \fix{Kindlmann color bar}
+  \caption{The Kindlmann color map.}
+  \label{fig:KindlmannColorBar}
+\end{figure}
+
+Alternatively, we could use a maximum change of hue between black and white
+to even better distinguish colors in the map. One way to do this is to spin
+the hue much like you would for a rainbow color map, but adjust the
+brightness of each color to match its placement in the color map as shown
+in Figure~\ref{fig:KindlmannColorBar}. This color bar is often referred to
+as the Kindlmann color map as it was first proposed in a paper by
+Kindlmann, \etal\fix{cite Kindlmann2002}. Similar variations such as the
+cubehelix color map\fix{cite Green2011} also exit. This type of color map
+is proven to perform well, especially in comparison to the rainbow color
+map\fix{cite}. 
+
+\fix{Maybe have a section on categorical colors: limited distinct colors
+  (color brewer). For more, group and use shading. Co-locate shades. Need a
+  good example.}
+
+
+\section{Conclusion}
 
 \section{Acknowledgments} 
 
