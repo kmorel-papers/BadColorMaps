@@ -120,18 +120,18 @@ a human observer to translate the colors back into the numeric values they
 represent. The choice of colors used in a pseudocolor map can have a major
 impact on this inverse translation. Consequently, much research has focused
 on the perception of color and its impact of the visual display of
-data\fix{cite stone, brewer, ware, reigens, rogowitz}. As one might expect,
-the color choice can have a dramatic impact on a viewer's performance in
-interpreting colors as numbers, and many effective color sets have been
-designed for this purpose.
+data\lcite{Brewer2005,Ware1988,Rheingans1999,Rogowitz1996,Silva2011}. As
+one might expect, the color choice can have a dramatic impact on a viewer's
+performance in interpreting colors as numbers, and many effective color
+sets have been designed for this purpose.
 
 With this rich understanding of color perception, one might think that
 modern visualizations make effective use of color. Unfortunately, many
 visualizations today use color sets that are known to be extremely
 problematic. In particular the rainbow color map, so called for its use of
 the spectrum of colors in the rainbow, is pervasively used in visualization
-despite the copious evidence that it performs poorly\fix{cite Borland,
-  Reigens, Franchesca? Others?}.
+despite the copious evidence that it performs
+poorly\lcite{Borland2007,Rogowitz1996,Rogowitz1998,Rheingans1999,Light2004}.
 
 This paper is a retrospective on why these bad colors are so commonly
 chosen for visualization and is a position statement on what we as
@@ -147,13 +147,13 @@ practitioners can do to best promote good color use.
 
 \noindent
 Reserach shows that subjects tend to overestimate their ability to
-interpret rainbow colors\fix{cite}. That is, users think they are
-interpreting rainbow colors better than alternatives even though they are
-in fact doing worse. This is certainly a contributing factor to the
-proliferation of the rainbow color map, but not the entire reason. Why else
-would the rainbow color map be so profuse in publications by the
-visualization community itself, a community that should know
-better\fix{cite Borland}?
+interpret rainbow colors\lcite{Borkin2011}\fix{overestimate ref}. That is,
+users think they are interpreting rainbow colors better than alternatives
+even though they are in fact doing worse. This is certainly a contributing
+factor to the proliferation of the rainbow color map, but not the entire
+reason. Why else would the rainbow color map be so profuse in publications
+by the visualization community itself, a community that should know
+better\lcite{Borland2007}?
 
 \subsection{Simplicity}
 
@@ -195,10 +195,10 @@ user raised this bug soon after the default color map in ParaView was
 changed from the rainbow color map to the map shown in
 Figure~\ref{fig:ColorMapExample}, which is designed to be reasonably
 similar to the rainbow color map it supplants but with better perceptual
-characteristics\fix{cite my paper, perceptual studies on it}. Despite this
-movement to make the better color map easier, this bug report is an
-artifact of the user's difficulty as he went through the extra motions to
-go back to the rainbow color map.
+characteristics\lcite{Moreland2009}. Despite this movement to make the
+better color map easier, this bug report is an artifact of the user's
+difficulty as he went through the extra motions to go back to the rainbow
+color map.
 
 The overestimation of the efficacy of the rainbow color map might be a
 motivator to spend effort to go back to it, but it is unlikely to be a very
@@ -233,7 +233,7 @@ expertise to beat these colors on aesthetics alone.
 \noindent
 Finally, a major contributor to the persistence of the rainbow color map is
 that it has become entrenched in scientific visualization. Take for example
-VTK\fix{cite}, the popular visualization library. Despite the fact that
+VTK\lcite{VTK}, the popular visualization library. Despite the fact that
 better color maps have been used with and contributed to VTK, the default
 coloring still reverts to the rainbow map. The problem is that although it
 is easy to add a new feature to VTK is easy, changing a core feature like
@@ -262,17 +262,17 @@ degree.
 
 \noindent
 Much research has shown that subjects tend to overestimate the efficacy of
-the rainbow color map\fix{cite Borkin2011, others}. Thus, it is critical
+the rainbow color map\lcite{Borkin2011}\fix{overestimate ref}. Thus, it is critical
 that visualization practitioners are educated on the appropriate use of
 color.
 
 Fortunately, the visualization community has been vigilant in recent years
 to train its own practitioners in good color usage, and there is evidence
-that we have made progress. Borland and Taylor\fix{cite} report that 52\%
-of papers in the 2005 IEEE Visualization conference proceedings displaying
-data with a pseudocoloring use a rainbow color map. In contrast in the
-2014 IEEE Visualization conference proceedings, only 29\% (8 out of 28)
-papers featuring the pseudocoloring of a 3D scalar field use a rainbow
+that we have made progress. Borland and Taylor\scite{Borland2007} report
+that 52\% of papers in the 2005 IEEE Visualization conference proceedings
+displaying data with a pseudocoloring use a rainbow color map. In contrast
+in the 2014 IEEE Visualization conference proceedings, only 29\% (8 out of
+28) papers featuring the pseudocoloring of a 3D scalar field use a rainbow
 color map, and only 16\% (10 out of 62) papers feature the color
 representation of any sequential data use a rainbow color map. Progress is
 being made.
@@ -311,14 +311,15 @@ users and observers should point out this fault. One such mechanism is to
 raise bug or feature requests with the development team. Another mechanism
 is to point out the deficiency in a public setting the developers may
 participate in. After all, it was the public admonishment in the
-publication by Borland and Taylor\fix{cite} more than anything that
-motivated the ParaView development team to remove the rainbow color map as
-the default.
+publication by Borland and Taylor\scite{Borland2007} more than anything
+that motivated the ParaView development team to remove the rainbow color
+map as the default.
 
-And on that note, \textbf{VisIt}\fix{cite}, \textbf{EnSight}\fix{cite},
-\textbf{VTK}\fix{cite}, \textbf{VAPOR}\fix{cite}, and
-\textbf{MayaVi}\fix{cite}, consider yourselves admonished for continuing to
-use the rainbow color map as the default.
+And on that note, \textbf{VisIt}\lcite{VisIt},
+\textbf{EnSight}\lcite{EnSight}, \textbf{VTK}\lcite{VTK},
+\textbf{VAPOR}\lcite{VAPOR}, and \textbf{MayaVi}\lcite{MayaVi}, consider
+yourselves admonished for continuing to use the rainbow color map as the
+default.
 
 \subsection{Simplification}
 
@@ -417,9 +418,9 @@ shading should not interfere with each other.
 Some practitioners propose using isoluminant color maps so that the
 psuedocoloring does not alter the shading in any way. However, isoluminant
 colors tend to make poor linear maps because of their low
-contrast\fix{cite}. Also the visual system is quite adept at distinguishing
-shading caused by textures and shading caused by lighting conditions as
-demonstrated in Figure~\ref{fig:CheckerShadowIllusion}.
+contrast\lcite{Mullen1985,Ware2004}. Also the visual system is quite adept
+at distinguishing shading caused by textures and shading caused by lighting
+conditions as demonstrated in Figure~\ref{fig:CheckerShadowIllusion}.
 
 \begin{figure}[htb]
   \centering
@@ -456,9 +457,8 @@ Early advice condemned the use of diverging color maps for showing a
 uniform range of values because they do not have monotomic brightness.
 However, recent works suggest using diverging color maps with hues having
 low/high cues, such as cool and warm colors, that naturally convey the
-relative values\fix{cite Moreland2009}. Recent preceptual studies have
-shown the diverging color maps to be
-efficacious\fix{citeBorkin2011,others}.
+relative values\lcite{Moreland2009}. Recent preceptual studies have shown
+the diverging color maps to be efficacious\lcite{Borkin2011,Samsel2015}.
 
 The Color Brewer web site\fix{perhaps the URLs should be references so that
   I can refer to them in multiple places} contains several diverging color
@@ -528,7 +528,7 @@ map\fix{cite}.
 
 \small
 \bibliographystyle{plain}
-%% \bibliography{BadColorMaps}
+\bibliography{BadColorMaps}
 
 \begin{biography}
 \noindent

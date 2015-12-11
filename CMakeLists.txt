@@ -12,4 +12,5 @@ set(images
 
 add_latex_document(BadColorMaps.tex
   IMAGES ${images}
+  BIBFILES BadColorMaps.bib
   )
