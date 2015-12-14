@@ -131,7 +131,7 @@ visualizations today use color sets that are known to be extremely
 problematic. In particular the rainbow color map, so called for its use of
 the spectrum of colors in the rainbow, is pervasively used in visualization
 despite the copious evidence that it performs
-poorly\lcite{Borland2007,Rogowitz1996,Rogowitz1998,Rheingans1999,Light2004}.
+poorly\lcite{Borland2007,Rogowitz1996,Rogowitz1998,Rheingans1999,Light2004,Ware2004}.
 
 This paper is a retrospective on why these bad colors are so commonly
 chosen for visualization and is a position statement on what we as
@@ -337,10 +337,10 @@ visualization, the coloring must be delivered in a format that can be used
 by non-experts.
 
 An excellent example of making color research accessible is the work by
-Brewer, \etal\fix{cite ColorBrewer}. This work has produced a plethora of
+Brewer, \etal\lcite{ColorBrewer}. This work has produced a plethora of
 color schemes that can be used for mapping values to colors. But the real
 value for visualization practitioners is that Brewer provides a web
-page\footnote{\url{http://colorbrewer2.org}} \fix{shown in figure X?} with
+page\lcite{ColorBrewerURL} \fix{shown in figure X?} with
 a simple and intuitive interface for choosing a collection of colors. Once
 selected, the site provides color values that are easily imported into any
 program, API, or web interface. The work of creating and maintaining this
@@ -353,23 +353,22 @@ visualization.
 
 We cannot all be as cool as Color Brewer, but even simple ready-to-play
 resources can make a difference. Consider my earlier paper on diverging
-color maps\fix{cite Moreland2009}. When I published this paper I posted a
+color maps\lcite{Moreland2009}. When I published this paper I posted a
 simple companion web site providing example color values that are easily
 imported in software as well as the software and tools used in constructing
-the paper.\footnote{\url{http://www.kennethmoreland.com/color-maps/}}
-\fix{Also have a screenshot?} I continue to maintain the site and have
-additionally added contributions from several readers. Although this page
-requires some effort to build and maintain, it has immeasurably helped the
-research take hold in practice, which both helps the visualization
+the paper\lcite{DivergingColorMapURL}. I continue to maintain the site and
+have additionally added contributions from several readers. Although this
+page requires some effort to build and maintain, it has immeasurably helped
+the research take hold in practice, which both helps the visualization
 community as a whole and helps increase visibility of my personal
 visualization work.
 
 Ultimately, almost all visualizations are made through some form of
 software tools, and we can make the biggest positive aspect by designing
-these tools to make good use of color. Tools like ParaView\fix{cite} and
-MATPLOT\fix{cite} have recently changed their default coloring to move away
-from rainbow colors. These changes engender improvements in a large
-quantity of visualizations produced.
+these tools to make good use of color. Tools like ParaView\lcite{ParaView}
+and MATLAB have recently changed their default coloring to move away from
+rainbow colors. These changes engender improvements in a large quantity of
+visualizations produced.
 
 \subsection{Time}
 
@@ -398,12 +397,12 @@ options small for simplicity.
 
 \noindent
 The first resource for any color choice should be the aforementioned
-excellent Color Brewer web page.\fix{prob move footnote here} The
-collection of color maps provided is very well organized, making it easy to
-find a set of colors appropriate for whatever visualization it is applied
-to. The extensive collection of color maps makes it likely that one is
-available for whatever visualization needs you have. And since each set of
-colors is designed well by experts, they are efficacious in addition to be
+excellent Color Brewer web page\lcite{ColorBrewerURL}. The collection of
+color maps provided is very well organized, making it easy to find a set of
+colors appropriate for whatever visualization it is applied to. The
+extensive collection of color maps makes it likely that one is available
+for whatever visualization needs you have. And since each set of colors is
+designed well by experts, they are efficacious in addition to be
 attractive.
 
 \subsection{3D Visualization}
@@ -418,9 +417,10 @@ shading should not interfere with each other.
 Some practitioners propose using isoluminant color maps so that the
 psuedocoloring does not alter the shading in any way. However, isoluminant
 colors tend to make poor linear maps because of their low
-contrast\lcite{Mullen1985,Ware2004}. Also the visual system is quite adept
-at distinguishing shading caused by textures and shading caused by lighting
-conditions as demonstrated in Figure~\ref{fig:CheckerShadowIllusion}.
+contrast\lcite{Mullen1985,Rogowitz2001,Ware2004}. Also the visual system is
+quite adept at distinguishing shading caused by textures and shading caused
+by lighting conditions as demonstrated in
+Figure~\ref{fig:CheckerShadowIllusion}.
 
 \begin{figure}[htb]
   \centering
@@ -460,10 +460,9 @@ low/high cues, such as cool and warm colors, that naturally convey the
 relative values\lcite{Moreland2009}. Recent preceptual studies have shown
 the diverging color maps to be efficacious\lcite{Borkin2011,Samsel2015}.
 
-The Color Brewer web site\fix{perhaps the URLs should be references so that
-  I can refer to them in multiple places} contains several diverging color
+The Color Brewer web site\lcite{ColorBrewerURL} contains several diverging color
 maps that can work well in 3D. There are also resources for diverging color
-maps that smoothly interpolate throughout\fix{ref my website?}.
+maps that smoothly interpolate throughout\lcite{DivergingColorMapURL}.
 
 \subsection{Flat Scalar Fields}
 
@@ -479,7 +478,7 @@ Thus, to maximize the perceptual resolution of a flat field, it is
 sometimes desirable to use a color map that goes from no brightness (black)
 to maximum brightness (white). Although a grayscale ramp satisfies this
 criteria, simultaneous contrast tends to make it perceptually
-inaccurate\fix{Cite Ware}. Inserting changing hues helps remove the
+inaccurate\lcite{Ware2004}. Inserting changing hues helps remove the
 problems with simultaneous contrast.
 
 \begin{figure}[htb]
@@ -509,10 +508,15 @@ the hue much like you would for a rainbow color map, but adjust the
 brightness of each color to match its placement in the color map as shown
 in Figure~\ref{fig:KindlmannColorBar}. This color bar is often referred to
 as the Kindlmann color map as it was first proposed in a paper by
-Kindlmann, \etal\fix{cite Kindlmann2002}. Similar variations such as the
-cubehelix color map\fix{cite Green2011} also exit. This type of color map
-is proven to perform well, especially in comparison to the rainbow color
-map\fix{cite}. 
+Kindlmann, \etal\scite{Kindlmann2002}. Similar variations such as the
+cubehelix color map\lcite{Green2011} also exit. This type of color map
+performs well, especially in comparison to the rainbow color map.
+
+% I know that Bernice Rogowitz has a study that directly compares the
+% Kindlmann color map to the rainbow color map, but that has not been
+% published yet. It also had a participant survey that found they
+% subjectively thought they did better with the rainbow even when they did
+% much worse.
 
 \fix{Maybe have a section on categorical colors: limited distinct colors
   (color brewer). For more, group and use shading. Co-locate shades. Need a
@@ -521,7 +525,11 @@ map\fix{cite}.
 
 \section{Conclusion}
 
-\section{Acknowledgments} 
+\section{Acknowledgments}
+
+\fix{Francesca Samsel, Terry Turton}
+
+\fix{Jason Wilke, Alan Scott}
 
 % To start a new column (but not a new page) and help balance the last-page
 % column length use \vfill\pagebreak.

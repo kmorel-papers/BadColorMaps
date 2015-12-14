@@ -2,12 +2,97 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for kmorel at 2015-12-10 17:47:56 -0700 
+%% Created for kmorel at 2015-12-14 14:41:13 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@url{DivergingColorMapURL,
+	Date-Added = {2015-12-14 21:40:56 +0000},
+	Date-Modified = {2015-12-14 21:41:10 +0000},
+	Note = {\url{http://www.kennethmoreland.com/color-maps/}}}
+
+@url{ColorBrewerURL,
+	Date-Added = {2015-12-14 21:39:11 +0000},
+	Date-Modified = {2015-12-14 21:39:50 +0000},
+	Note = {\url{http://colorbrewer2.org}}}
+
+@article{Green2011,
+	Abstract = {I describe a colour scheme that is appropriate for the screen display of intensity images. This -- unlike many currently available schemes -- is designed to be monotonically increasing in terms of its perceived brightness. Also, when printed on a black and white postscript printer, the scheme results in a greyscale with monotonically increasing brightness. This scheme has recently been incorporated into the radio astronomical analysis packages CASA and AIPS.},
+	Annote = {Describes the colorhelix method for creating a color map. The basic idea is to follow the traditional rainbow hues but vary the brightness from black to white. The computation is done in RGB space, which makes it easier but probably less perceptually linear.},
+	Author = {D. A. Green},
+	Date-Added = {2015-12-14 21:36:46 +0000},
+	Date-Modified = {2015-12-14 21:36:46 +0000},
+	Journal = {Bulletin of the Astronomical Society of India},
+	Note = {arXiv:1108.5083},
+	Pages = {289--295},
+	Title = {A colour scheme for the display of astronomical intensity images},
+	Volume = {39},
+	Year = {2011},
+	Bdsk-Url-1 = {http://arxiv.org/abs/1108.5083}}
+
+@inproceedings{Kindlmann2002,
+	Abstract = {Most systems used for creating and displaying colormap-based visualizations are not photometrically calibrated. That is, the relationship between RGB input levels and perceived luminance is usually not known, due to variations in the monitor, hardware configuration, and the viewing environment. However, the luminance component of perceptually based colormaps should be controlled, due to the central role that luminance plays in our visual processing. We address this problem with a simple and effective method for performing luminance matching on an uncalibrated monitor. The method is akin to the minimally distinct border technique (a previous method of luminance matching used for measuring luminous efficiency), but our method relies on the brain's highly developed ability to distinguish human faces. We present a user study showing that our method produces equivalent results to the minimally distinct border technique, but with significantly improved precision. We demonstrate how results from our luminance matching method can be directly applied to create new univariate colormaps.},
+	Annote = {This paper is really about a color-calibration technique in which users match the luminance of colors based on images with human face shapes.
+
+I sometimes see this paper cited for a color map that is given incidentally as a demonstration of the technique. Sometimes referred to as the Kindlmann colormap, it is the rainbow color map with each of the control points adjusted such that its luminance matches that of a linear grayscale. Thus, it has monotonic luminance.},
+	Author = {Gordon Kindlmann and Erik Reinhard and Sarah Creem},
+	Booktitle = {Proceedings of IEEE Visualization},
+	Date-Added = {2015-12-14 21:36:25 +0000},
+	Date-Modified = {2015-12-14 21:36:25 +0000},
+	Month = {October},
+	Note = {{DOI}~10.1109/VISUAL.2002.1183788},
+	Pages = {299--306},
+	Title = {Face-based Luminance Matching for Perceptual Colormap Generation},
+	Year = {2002},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1109/VISUAL.2002.1183788}}
+
+@incollection{ParaView,
+	Annote = {One of the suggested publications to use to cite ParaView. This is the one I am using when I talk about ParaView generally. If talking about a specific feature or newer functionality, then [ParaViewGuide] is probably better.
+},
+	Author = {James Ahrens and Berk Geveci and Charles Law},
+	Booktitle = {Visualization Handbook},
+	Date-Added = {2015-12-14 21:15:19 +0000},
+	Date-Modified = {2015-12-14 21:15:19 +0000},
+	Note = {{ISBN}~978-0123875822},
+	Publisher = {Elesvier},
+	Title = {ParaView: An End-User Tool for Large Data Visualization},
+	Year = {2005}}
+
+@article{ColorBrewer,
+	Abstract = {ColorBrewer is a tool that assists mapmakers in choosing and creating color schemes. It is available online at <www.ColorBrewer.org>. The color schemes range from 3 to 12 classes and are organized into three basic categories: sequential, diverging, and qualitative. Each of these scheme types has general perceptual characteristics which are described using Munsell hue, value, and chroma specifications. Each scheme has been proofed from color-separated negatives and adjusted to offer CMYK (cyan, magenta, yellow, and black) specifications that produce a readable map when they are used in process-printed publications. This paper offers a printed catalog of all of the ColorBrewer schemes to allow mapmakers to evaluate the appearance of each scheme before they commit to using them in print publications. Since process-color proofing is expensive, this catalog will reduce mapmakers' costs and allow them to be more confident that their maps will make the transition from the desktop computing environment to publication without compromising the intended message through poor color specification.},
+	Annote = {The reference to use for the ColorBrewer web site.},
+	Author = {Cynthia A. Brewer and Geoffrey W. Hatchard and Mark A. Harrower},
+	Date-Added = {2015-12-14 21:05:10 +0000},
+	Date-Modified = {2015-12-14 21:05:10 +0000},
+	Journal = {Cartography and Geographic Information Science},
+	Note = {{DOI}~10.1559/152304003100010929},
+	Number = {1},
+	Pages = {5--32},
+	Title = {ColorBrewer in Print: A Catalog of Color Schemes for Maps},
+	Volume = {30},
+	Year = {2003},
+	Bdsk-Url-1 = {http://dx.doi.org/10.1559/152304003100010929},
+	Bdsk-Url-2 = {http://tizmogollon.weebly.com/uploads/1/5/4/7/15475746/brewer_etal_2003_colorbrewer_in_print.pdf}}
+
+@inproceedings{Rogowitz2001,
+	Abstract = {We have developed a fast, perceptual method for selecting color scales for data visualization that takes advantage of our sensitivity to luminance variations in human faces. To do so, we conducted experiments in which we mapped various color scales onto the intensitiy values of a digitized photograph of a face and asked observers to rate each image. We found a very strong correlation between the perceived naturalness of the images and the degree to which the underlying color scales increased monotonically in luminance. Color scales that did not include a monotonically-increasing luminance component produced no positive rating scores. Since color scales with monotonic luminance profiles are widely recommended for visualizing continuous scalar data, a purely visual technique for identifying such color scales could be very useful, especially in situations where color calibration is not integrated into the visualization environment, such as over the Internet.},
+	Annote = {This fairly strange perceptual study took a grayscale photograph (specifically, that of Tony Blair, then Prime Minister of the UK and subject of the paper's punny title) and evaluated different color maps by applying them to the photographs and asking subjects how natural it looks.
+
+The main conclusion of the paper is that colormaps with a monotonic luminance profile work the best. However, I think applying a color map to a luminance profile and then claiming those with a monotomic luminance profile is a bit of a circular argument.
+
+One interesting conclusion was how poorly isoluminant colormaps worked, which the authors attributed to having no high spatial-frequency information if the luminance does not change.
+},
+	Author = {Bernice E. Rogowitz and Alan D. Kalvin},
+	Booktitle = {Proceedings of the Conference on Visualization '01},
+	Date-Added = {2015-12-14 20:58:42 +0000},
+	Date-Modified = {2015-12-14 20:58:42 +0000},
+	Month = {October},
+	Pages = {183--190},
+	Title = {The ``Which Blair Project'': A Quick Visual Method for Evaluating Perceptual Color Maps},
+	Year = {2001}}
 
 @article{MayaVi,
 	Abstract = {Mayavi is a general purpose, open source 3D scientific visualization package that is tightly integrated with the rich ecosystem of Python scientific packages. Mayavi provides a continuum of tools for developing scientific applications, ranging from interactive and script-based data visualization in Python to full-blown custom end-user applications.},
