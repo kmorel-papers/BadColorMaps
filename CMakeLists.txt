@@ -6,6 +6,7 @@ include(UseLATEX.cmake)
 
 set(images
   images/ColorMapExample.png
+  images/RainbowBar.png
   images/pres-log-legend-0042.png
   images/ColorBrewer.png
   images/CheckerShadowIllusion.png

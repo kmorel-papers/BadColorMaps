@@ -137,10 +137,46 @@ This paper is a retrospective on why these bad colors are so commonly
 chosen for visualization and is a position statement on what we as
 practitioners can do to best promote good color use.
 
-\fix{I am considering having a short section on the evils of the rainbow
-  color map if there is room. If I do, I might remove a few lines above. If
-  I do not, I might add a statement or two above that we are not addressing
-  this because it is so commonly presented.}
+
+\section{Problems with the Rainbow}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=.9\linewidth]{images/RainbowBar}
+  \caption{The rainbow color map. Know thy enemy.}
+  \label{fig:Rainbow}
+\end{figure}
+
+\noindent
+Although there are lots of ways to misuse color, this paper focuses most
+specifically on using rainbow colors like those shown in
+Figure~\ref{fig:Rainbow} for scientific visualization. This is because the
+rainbow color map is extremely well studied and known to be a very poor
+representation of data, yet rainbow colors are still used frequently in
+scientific visualizations.
+
+There are several good publications describing the problems with the
+rainbow color map\lcite{Borland2007,Light2004,Rogowitz1998}, so we do not
+do a thorough analysis here. Instead, this paper gives a very brief
+overview of the rainbow color map's problems, which fall into three
+categories: unnatural ordering, irregular perception, and sensitivities to
+color deficiencies.
+
+The first problem is that the rainbow colors do not follow any natural
+perceived ordering. Although the order of the hues can be learned, there is
+no innate sense of higher or lower\lcite{Ware2004}.
+
+The second problem is that the perceptual changes in the rainbow colors are
+not uniform. The colors appear to change much faster in the yellow region
+than the green region. This can both obfuscate the data with artifacts that
+are not in the data and hide important features of the
+data\lcite{Borland2007}.
+
+The third problem with the rainbow color map is that it is sensitive to
+deficiencies in vision. Although normal human vision can distinguish all of
+the rainbow's colors, roughly 5\% of the population has deficiencies in
+distinguishing these colors (usually the between green and red). These
+viewers will misinterpret much of the color map\lcite{Light2004}.
 
 
 \section{Why We Use Bad Colors}
@@ -528,9 +564,9 @@ performs well, especially in comparison to the rainbow color map.
 % subjectively thought they did better with the rainbow even when they did
 % much worse.
 
-\fix{Maybe have a section on categorical colors: limited distinct colors
-  (color brewer). For more, group and use shading. Co-locate shades. Need a
-  good example.}
+%% \fix{Maybe have a section on categorical colors: limited distinct colors
+%%   (color brewer). For more, group and use shading. Co-locate shades. Need a
+%%   good example.}
 
 
 \section{Conclusion}
