@@ -46,8 +46,8 @@
 
 \newcommand*{\keyterm}[1]{\emph{#1}}
 
-\newcommand{\fix}[1]{{\color{red}\textsc{[#1]}}}
-%\newcommand{\fix}[1]{}
+%\newcommand{\fix}[1]{{\color{red}\textsc{[#1]}}}
+\newcommand{\fix}[1]{}
 
 % Avoid putting figures on their own page.
 \renewcommand{\textfraction}{0.05}
@@ -79,8 +79,8 @@
 
 \begin{abstract}
 \noindent
-We know the rainbow color map is terrible and emphatically reviled by the
-visualization community, yet its use continues to persist. Why do we
+We know the rainbow color map is terrible, and it is emphatically reviled
+by the visualization community, yet its use continues to persist. Why do we
 continue to use a this perceptual encoding with so many known flaws?
 Instead of focusing on why we should not use rainbow colors, this position
 statement explores the rational for why we do pick these colors despite
@@ -89,10 +89,10 @@ even experts that know better sometimes choose poorly. A larger issue is
 the expedience that we have inadvertently made the rainbow color map
 become. Knowing why the rainbow color map is used will help us move away
 from it. Education is good, but clearly not sufficient. We gain traction by
-making sensible color alternatives the more convenient alternative. It is
-not feasible to force a color map on users. Our goal is to supplant the
-rainbow color map as a common standard, and we will find that even those
-wedded to it will migrate away.
+making sensible color alternatives more convenient. It is not feasible to
+force a color map on users. Our goal is to supplant the rainbow color map
+as a common standard, and we will find that even those wedded to it will
+migrate away.
 \end{abstract}
 
 
@@ -100,7 +100,7 @@ wedded to it will migrate away.
 
 \noindent
 A pervasive technique in scientific visualization called pseudocoloring is
-to apply colors to an object that vary based on some numerical variable.
+to apply colors that vary based on some numerical variable to an object.
 Pseudocoloring requires defining a function or map from numerical values to
 colors. A color map is typically defined by selecting a continuum of colors
 that map linearly to a range of numeric values.
@@ -119,7 +119,7 @@ The efficacy of a pseudocolor visualization is contingent on the ability of
 a human observer to translate the colors back into the numeric values they
 represent. The choice of colors used in a pseudocolor map can have a major
 impact on this inverse translation. Consequently, much research has focused
-on the perception of color and its impact of the visual display of
+on the perception of color and its effect on the visual display of
 data\lcite{Brewer2005,Ware1988,Rheingans1999,Rogowitz1996,Silva2011}. As
 one might expect, the color choice can have a dramatic impact on a viewer's
 performance in interpreting colors as numbers, and many effective color
@@ -169,20 +169,20 @@ no innate sense of higher or lower\lcite{Ware2004}.
 The second problem is that the perceptual changes in the rainbow colors are
 not uniform. The colors appear to change much faster in the yellow region
 than the green region. This can both obfuscate the data with artifacts that
-are not in the data and hide important features of the
+are not in the data and hide important features that are in the
 data\lcite{Borland2007}.
 
 The third problem with the rainbow color map is that it is sensitive to
 deficiencies in vision. Although normal human vision can distinguish all of
 the rainbow's colors, roughly 5\% of the population has deficiencies in
-distinguishing these colors (usually the between green and red). These
-viewers will misinterpret much of the color map\lcite{Light2004}.
+distinguishing these colors (usually between green and red). These viewers
+will misinterpret much of the color map\lcite{Light2004}.
 
 
 \section{Why We Use Bad Colors}
 
 \noindent
-Reserach shows that subjects tend to overestimate their ability to
+Research shows that subjects tend to overestimate their ability to
 interpret rainbow colors\lcite{Borkin2011}\fix{overestimate ref}. That is,
 users think they are interpreting rainbow colors better than alternatives
 even though they are in fact doing worse. This is certainly a contributing
@@ -198,25 +198,25 @@ One explanation is the sheer simplicity of creating the rainbow color map.
 Nearly all color selections in computer graphics interfaces are done with
 RGB (red-green-blue) channels. RGB is a natural choice in computer graphics
 because the triplet values match the intensity of red, green, and blue
-light mixed in most display peripherals. An unintended consiquence of the
+light mixed in most display peripherals. An unintended consequence of the
 RGB color space is that one of the easiest color continua to make is an
 interpolation between different combinations of fully active and fully
 inactive channels, which are in fact the rainbow colors. Many computer
 graphics interfaces also allow colors chosen with HSV
-(hue-saturation-value) channels. The HSV color space makes makes rainbow
-colors even easier: hold saturation and value at maximum while varying hue.
+(hue-saturation-value) channels. The HSV color space makes rainbow colors
+even easier: hold saturation and value at maximum while varying hue.
 
 With the simplicity of creating a rainbow spectrum of colors combined with
 the inclination to accept the colors as a good representation, it is no
-wonder that the rainbow colors are often the first and likely the default
-color mapping introduces as a visualization package gets built. These
-initial poor color choices quickly become ingrained in the software as
-regression testing and backward compatibility must be maintained. Further
-software layers continue to accept this default and software applications
-are likely to expose the rainbow color map as its default choice for end
-users. Few users will have either the knowledge or the inclination to
-change the default colors used, and thus the rainbow color map becomes
-featured throughout visualizations.
+wonder that the rainbow colors are often the first implemented as a
+visualization package gets built and are likely to become the default.
+These initial poor color choices quickly become ingrained in the software
+as regression testing and backward compatibility must be maintained.
+Further software layers continue to accept this default and software
+applications are likely to expose the rainbow color map as its default
+choice for end users. Few users will have either the knowledge or the
+inclination to change the default colors used, and thus the rainbow color
+map becomes featured throughout visualizations.
 
 \subsection{Aesthetics}
 
@@ -238,7 +238,7 @@ color map.
 
 The overestimation of the efficacy of the rainbow color map might be a
 motivator to spend effort to go back to it, but it is unlikely to be a very
-strong motivator. In fact, other ancdotal incidents suggest that even users
+strong motivator. In fact, other anecdotal incidents suggest that even users
 that are aware of the rainbow's flaws still have an affinity to use it.
 Consider the example visualization in Figure~\ref{fig:ExpertRainbowVis}
 created by one of my colleagues at Sandia National Laboratories. He and I
@@ -272,10 +272,10 @@ that it has become entrenched in scientific visualization. Take for example
 VTK\lcite{VTK}, the popular visualization library. Despite the fact that
 better color maps have been used with and contributed to VTK, the default
 coloring still reverts to the rainbow map. The problem is that although it
-is easy to add a new feature to VTK is easy, changing a core feature like
-the default colors is difficult. VTK contains hundreds of regression tests
-that could break if the default colors are changed, and updating them can
-be very time consuming. Furthermore, such a change will necessarily break
+is easy to add a new feature to VTK, changing a core feature like the
+default colors is difficult. VTK contains hundreds of regression tests that
+could break if the default colors are changed, and updating them can be
+very time consuming. Furthermore, such a change will necessarily break
 backwards compatibility and so has to be approved by the larger VTK
 community, another time consuming process. These software development
 minutiae create inertia in changing color map usage.
@@ -307,9 +307,9 @@ to train its own practitioners in good color usage, and there is evidence
 that we have made progress. Borland and Taylor\scite{Borland2007} report
 that 52\% of papers in the 2005 IEEE Visualization conference proceedings
 displaying data with a pseudocoloring use a rainbow color map. In contrast
-in the 2014 IEEE Visualization conference proceedings, only 29\% (8 out of
-28) papers featuring the pseudocoloring of a 3D scalar field use a rainbow
-color map, and only 16\% (10 out of 62) papers feature the color
+in the 2014 IEEE Visualization conference proceedings, only 29\% of papers
+(8 out of 28) featuring the pseudocoloring of a 3D scalar field use a
+rainbow color map, and only 16\% of papers (10 out of 62) featuring the color
 representation of any sequential data use a rainbow color map. Progress is
 being made.
 
@@ -319,7 +319,7 @@ visualization user. Visualization is an integrated part of computational
 science, and many tools are designed with the understanding they will be
 used by the visualization layman. Furthermore, as we have seen previously
 it is often the case that even after having enough education to know the
-rainbow color map is bad users still tend to apply it. Education is
+rainbow color map is bad, users still tend to apply it. Education is
 necessary, but not sufficient.
 
 \subsection{Admonishment}
@@ -363,8 +363,8 @@ default.
 As stated previously, one of the main factors making the rainbow colors a
 primary choice in visualization is the sheer simplicity of creating them.
 However, the simpler it is to create good colors, the more likely a user is
-going to do so. Ideally, good coloring become easier to apply than poor
-coloring.
+going to do so. Ideally, we make good coloring become easier to apply than
+poor coloring.
 
 The first step is for the experts designing color for visualization to make
 the colors they create accessible. Creating examples and publishing
@@ -407,7 +407,7 @@ community as a whole and helps increase visibility of my personal
 visualization work.
 
 Ultimately, almost all visualizations are made through some form of
-software tools, and we can make the biggest positive aspect by designing
+software tools, and we can make the biggest positive impact by designing
 these tools to make good use of color. Tools like ParaView\lcite{ParaView}
 and MATLAB have recently changed their default coloring to move away from
 rainbow colors. These changes engender improvements in a large quantity of
@@ -425,6 +425,7 @@ education, admonishment, and simplification.
 
 \section{Simple Practical Advice}
 
+\noindent
 The remainder of this paper is spent administering simple, practical advice
 for novice users. Engineering good color maps is complex as it requires
 considerable knowledge of color theory and perception, involves the
@@ -445,8 +446,8 @@ Figure~\ref{fig:ColorBrewer}. The collection of color maps provided is very
 well organized, making it easy to find a set of colors appropriate for
 whatever visualization it is applied to. The extensive collection of color
 maps makes it likely that one is available for whatever visualization needs
-you have. And since each set of colors is designed well by experts, they
-are efficacious in addition to be attractive.
+you have. And since each set of colors is designed by experts, they are
+efficacious as well as attractive.
 
 \subsection{3D Visualization}
 
@@ -484,7 +485,7 @@ unusable on 3D shapes.
 Common advice for mapping a scalar field with no special middle value is to
 use a color map with monotonically increasing brightness because brightness
 is a good indication of order and provides high contrast. The maximum range
-of brightness that can be achived is to go from black to white (with any
+of brightness that can be achieved is to go from black to white (with any
 number of hues used in between). However, because the darkest colors
 interfere with 3D shading, the darker colors cannot be used, reducing the
 perceptual resolution of the color map.
@@ -497,10 +498,10 @@ special significance in the middle (such as sea level for elevation or the
 freezing point for temperature).
 
 Early advice condemned the use of diverging color maps for showing a
-uniform range of values because they do not have monotomic brightness.
+uniform range of values because they do not have monotonic brightness.
 However, recent works suggest using diverging color maps with hues having
 low/high cues, such as cool and warm colors, that naturally convey the
-relative values\lcite{Moreland2009}. Recent preceptual studies have shown
+relative values\lcite{Moreland2009}. Recent perceptual studies have shown
 the diverging color maps to be efficacious\lcite{Borkin2011,Samsel2015}.
 
 The Color Brewer web site\lcite{ColorBrewerURL} contains several diverging color
@@ -520,7 +521,7 @@ requires no shading, it does not have the color limitations of 3D data.
 
 Thus, to maximize the perceptual resolution of a flat field, it is
 sometimes desirable to use a color map that goes from no brightness (black)
-to maximum brightness (white). Although a grayscale ramp satisfies this
+to maximum brightness (white). Although a gray scale ramp satisfies this
 criteria, simultaneous contrast tends to make it perceptually
 inaccurate\lcite{Ware2004}. Inserting changing hues helps remove the
 problems with simultaneous contrast.
@@ -552,10 +553,10 @@ Alternatively, we could use a maximum change of hue between black and white
 to even better distinguish colors in the map. One way to do this is to spin
 the hue much like you would for a rainbow color map, but adjust the
 brightness of each color to match its placement in the color map as shown
-in Figure~\ref{fig:KindlmannColorBar}. This color bar is often referred to
+in Figure~\ref{fig:KindlmannColorBar}. This color map is often referred to
 as the Kindlmann color map as it was first proposed in a paper by
 Kindlmann, \etal\scite{Kindlmann2002}. Similar variations such as the
-cubehelix color map\lcite{Green2011} also exit. This type of color map
+cubehelix color map\lcite{Green2011} also exist. This type of color map
 performs well, especially in comparison to the rainbow color map.
 
 % I know that Bernice Rogowitz has a study that directly compares the
