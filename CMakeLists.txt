@@ -9,6 +9,8 @@ set(images
   images/pres-log-legend-0042.png
   images/ColorBrewer.png
   images/CheckerShadowIllusion.png
+  ipython/BlackBodyMap.pdf
+  ipython/KindlmannMap.pdf
   )
 
 add_latex_document(BadColorMaps.tex
