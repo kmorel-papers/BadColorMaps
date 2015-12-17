@@ -12,6 +12,9 @@ set(images
   images/CheckerShadowIllusion.png
   ipython/BlackBodyMap.pdf
   ipython/KindlmannMap.pdf
+  ipython/CoolWarmExtended.pdf
+  ipython/BlueOrangeExtended.pdf
+  ipython/BlueGreenExtended.pdf
   )
 
 add_latex_document(BadColorMaps.tex
