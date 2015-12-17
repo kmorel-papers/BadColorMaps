@@ -507,7 +507,18 @@ the diverging color maps to be efficacious\lcite{Borkin2011,Samsel2015}.
 The Color Brewer web site\lcite{ColorBrewerURL} contains several diverging color
 maps that can work well in 3D. There are also resources for diverging color
 maps that smoothly interpolate throughout\lcite{DivergingColorMapURL} as
-shown in Figure~\ref{fig:ColorMapExample}.
+shown in Figure~\ref{fig:DivergingColorMaps}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\linewidth,trim=0.7in 0.62in 0.7in 0.85in]
+                  {ipython/CoolWarmMap}
+  %% \includegraphics[width=\linewidth,trim=0.7in 0.62in 0.7in 0.85in]
+  %%                 {ipython/CoolWarmLabMap}
+  \caption{Smooth diverging color maps for scientific visualization. Colors
+    are interpolated in the polar Msh color space\lcite{Moreland2009}.}
+  \label{fig:DivergingColorMaps}
+\end{figure}
 
 \subsection{Flat Scalar Fields}
 
@@ -530,7 +541,8 @@ problems with simultaneous contrast.
   \centering
   \includegraphics[width=\linewidth,trim=0.69in 0.62in 0.76in 0.62in]
                   {ipython/BlackBodyMap}
-  \caption{The black body radiation color map.}
+  \caption{The black body radiation color map. The provided colors can be
+    interpolated in the CIELAB color space.}
   \label{fig:BlackBodyRadiationColorBar}
 \end{figure}
 
@@ -545,7 +557,8 @@ helps reinforce the interpretation of the colors.
   \centering
   \includegraphics[width=\linewidth,trim=0.69in 0.62in 0.76in 0.62in]
                   {ipython/KindlmannMap}
-  \caption{The Kindlmann color map.}
+  \caption{The Kindlmann color map\lcite{Kindlmann2002}. The provided
+    colors interpolate reasonably well in the CIELAB color space.}
   \label{fig:KindlmannColorBar}
 \end{figure}
 

@@ -10,6 +10,8 @@ set(images
   images/pres-log-legend-0042.png
   images/ColorBrewer.png
   images/CheckerShadowIllusion.png
+  ipython/CoolWarmMap.pdf
+  ipython/CoolWarmLabMap.pdf
   ipython/BlackBodyMap.pdf
   ipython/KindlmannMap.pdf
   ipython/CoolWarmExtended.pdf
