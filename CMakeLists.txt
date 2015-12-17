@@ -13,6 +13,7 @@ set(images
   ipython/CoolWarmMap.pdf
   ipython/CoolWarmLabMap.pdf
   ipython/BlackBodyMap.pdf
+  ipython/BlackBodyExtendedMap.pdf
   ipython/KindlmannMap.pdf
   ipython/CoolWarmExtended.pdf
   ipython/BlueOrangeExtended.pdf
